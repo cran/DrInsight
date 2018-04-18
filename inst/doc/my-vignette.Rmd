@@ -20,9 +20,11 @@ In this package, we use CMap drug perturbation data as reference profiles for co
 ```{r,eval=F}
 library("DrInsight")
 # load in and process the downloaded CMap drug rank matrix
-cmap.ref.profiles = get.cmap.ref(cmap.data.path = '/path_to/rankMatrix.txt')
+cmap.ref.profiles = get.cmap.ref(cmap.data.path = '/path_to/rankMatrix.txt', 
+                                 probe.to.genes = probe.to.genes, drug.info = drug.info)
 ```
-This function needs the local path to the "rankMatrix.txt" file as input information, and produces the obejct **_cmap.ref.profiles_** that contains the CMap drug instance information and drug rank matrix. 
+This function needs the local path to the "rankMatrix.txt" file as input information, and produces the obejct **_cmap.ref.profiles_** that contains the CMap drug instance information and drug rank matrix. The probe to gene symbol converter "probe.to.genes" and the matrix of CMap drug meta information "drug.info" are embeded in the package and can be used directly. 
+
 
 We then use the function `drug.ident()` to perform drug identification analysis. In addition to the **_cmap.ref.profiles_**, this function takes a user provided disease or drug data as query dataset (parameter `query.data`). The parameter `query.data`  takes a matrix containing two columns: geneSymbol and score. The scores in 'score' column can be any numeric scores from statistical test of differential analysis between query and control phenotype. (<span style="color:red">**Note**</span>: the column names of query.data matrix must be **'geneSymbol'** and **'score'**). Dr. Insight provides a demo query.data **_brca.tcga_**, which contains the tumor versus normal t-test statistic scores of TCGA breast cancer samples.
 

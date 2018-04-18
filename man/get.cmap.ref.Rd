@@ -4,8 +4,8 @@
 \alias{get.cmap.ref}
 \title{Read In and Process CMap Reference Profiles}
 \usage{
-get.cmap.ref(cmap.data.path = NULL, probe.to.genes = probe.to.genes,
-  drug.info = drug.info)
+get.cmap.ref(cmap.data.path = NULL, probe.to.genes = NULL,
+  drug.info = NULL)
 }
 \arguments{
 \item{cmap.data.path}{The local path and the name of the downloaded data matrix file. The data matrix file should be in txt format.}

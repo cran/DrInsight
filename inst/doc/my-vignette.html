@@ -12,7 +12,7 @@
 
 <meta name="author" content="Jinyan Chan &amp; Jinghua Gu" />
 
-<meta name="date" content="2018-04-16" />
+<meta name="date" content="2018-04-17" />
 
 <title>Drug Connectivity Mapping with Dr. Insight</title>
 
@@ -70,7 +70,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Drug Connectivity Mapping with Dr. Insight</h1>
 <h4 class="author"><em>Jinyan Chan &amp; Jinghua Gu</em></h4>
-<h4 class="date"><em>2018-04-16</em></h4>
+<h4 class="date"><em>2018-04-17</em></h4>
 
 
 
@@ -80,8 +80,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>In this package, we use CMap drug perturbation data as reference profiles for connectivity mapping. User can download the CMap data matrix from CMap website <strong><a href="https://portals.broadinstitute.org/cmap/" class="uri">https://portals.broadinstitute.org/cmap/</a> </strong> under “downloads” section, “data matrix” item. We provide the function <code>get.cmap.ref()</code> to load the CMap data matrix (in its original txt format) you downloaded into your local path into R, and process it into the format that can be used for the following drug identification function.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;DrInsight&quot;</span>)
 <span class="co"># load in and process the downloaded CMap drug rank matrix</span>
-cmap.ref.profiles =<span class="st"> </span><span class="kw">get.cmap.ref</span>(<span class="dt">cmap.data.path =</span> <span class="st">'/path_to/rankMatrix.txt'</span>)</code></pre></div>
-<p>This function needs the local path to the “rankMatrix.txt” file as input information, and produces the obejct <strong><em>cmap.ref.profiles</em></strong> that contains the CMap drug instance information and drug rank matrix.</p>
+cmap.ref.profiles =<span class="st"> </span><span class="kw">get.cmap.ref</span>(<span class="dt">cmap.data.path =</span> <span class="st">'/path_to/rankMatrix.txt'</span>, 
+                                 <span class="dt">probe.to.genes =</span> probe.to.genes, <span class="dt">drug.info =</span> drug.info)</code></pre></div>
+<p>This function needs the local path to the “rankMatrix.txt” file as input information, and produces the obejct <strong><em>cmap.ref.profiles</em></strong> that contains the CMap drug instance information and drug rank matrix. The probe to gene symbol converter “probe.to.genes” and the matrix of CMap drug meta information “drug.info” are embeded in the package and can be used directly.</p>
 <p>We then use the function <code>drug.ident()</code> to perform drug identification analysis. In addition to the <strong><em>cmap.ref.profiles</em></strong>, this function takes a user provided disease or drug data as query dataset (parameter <code>query.data</code>). The parameter <code>query.data</code> takes a matrix containing two columns: geneSymbol and score. The scores in ‘score’ column can be any numeric scores from statistical test of differential analysis between query and control phenotype. (<span style="color:red"><strong>Note</strong></span>: the column names of query.data matrix must be <strong>‘geneSymbol’</strong> and <strong>‘score’</strong>). Dr. Insight provides a demo query.data <strong><em>brca.tcga</em></strong>, which contains the tumor versus normal t-test statistic scores of TCGA breast cancer samples.</p>
 <p>We perform drug identification with function <code>drug.ident()</code> and store the results in an object <strong><em>drug.ident.res</em></strong>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># load in the demo data: TCGA breast cancer data</span>

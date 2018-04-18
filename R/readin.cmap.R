@@ -9,16 +9,13 @@
 #' @export
 
 
-get.cmap.ref = function(cmap.data.path = NULL, probe.to.genes = probe.to.genes, drug.info = drug.info){
+get.cmap.ref = function(cmap.data.path = NULL, probe.to.genes = NULL, drug.info = NULL){
   cat("\n")
   cat("\n")
   message("Loading CMap drug matrix. This may take some time ... \n")
   cmap.drug.rank = read.table(cmap.data.path,row.names = 1, header = T)
-
   cmap.drug.rank = cmap.drug.rank[probe.to.genes$ID,]
-
   rownames(cmap.drug.rank) = probe.to.genes$Gene.Symbol
-
   cmap.ref.profiles = list(drug.info = drug.info, drug.rank.matrix = cmap.drug.rank)
   return(cmap.ref.profiles)
 }
