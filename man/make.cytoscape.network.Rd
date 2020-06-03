@@ -4,8 +4,10 @@
 \alias{make.cytoscape.network}
 \title{Drug and Pathway connection output files for Cytoscape visulization}
 \usage{
-make.cytoscape.network(path.analysis.res = path.analysis.res,
-  pathway.FDR.cutoff = 0.1)
+make.cytoscape.network(
+  path.analysis.res = path.analysis.res,
+  pathway.FDR.cutoff = 0.1
+)
 }
 \arguments{
 \item{path.analysis.res}{The pathway analysis results. Output of pathway.analysis().}

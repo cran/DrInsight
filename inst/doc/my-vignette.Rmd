@@ -15,7 +15,7 @@ Dr. Insight provides a novel systematic connectivity mapping method to connect d
 
 ## Drug Identification Analysis
 
-In this package, we use CMap drug perturbation data as reference profiles for connectivity mapping. User can download the CMap data matrix from CMap website **https://portals.broadinstitute.org/cmap/ ** under "downloads" section, "data matrix" item. We provide the function `get.cmap.ref()` to load the CMap data matrix (in its original txt format) you downloaded into your local path into R, and process it into the format that can be used for the following drug identification function.
+In this package, we use CMap drug perturbation data as reference profiles for connectivity mapping. User can download the CMap data matrix from **ftp://ftp.broadinstitute.org/pub/cmap/rankMatrix.txt.zip**. We provide the function `get.cmap.ref()` to load the CMap data matrix (in its original txt format) you downloaded into your local path into R, and process it into the format that can be used for the following drug identification function.
 
 ```{r,eval=F}
 library("DrInsight")

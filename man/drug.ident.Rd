@@ -4,9 +4,13 @@
 \alias{drug.ident}
 \title{Dr. Insight Drug Identification}
 \usage{
-drug.ident(query.data = NULL, cmap.ref.profiles = NULL,
-  repurposing.unit = "treatment", CEG.threshold = 0.05,
-  connectivity = "negative")
+drug.ident(
+  query.data = NULL,
+  cmap.ref.profiles = NULL,
+  repurposing.unit = "treatment",
+  CEG.threshold = 0.05,
+  connectivity = "negative"
+)
 }
 \arguments{
 \item{query.data}{User provided differential expression analysis results(e.g. t-test statistic scores) of querying data (either disease phenotype data, or drug expression data). The column names for gene symboles and statistic scores must be "geneSymbol" and "score".}

@@ -4,9 +4,14 @@
 \alias{network.graph}
 \title{Plot Drug and Pathway Interaction Network}
 \usage{
-network.graph(path.analysis.res = path.analysis.res,
-  pathway.FDR.cutoff = 0.1, pathway.label = FALSE, drug.label.size = 1.2,
-  path.label.size = 0.8, return.adj.table = TRUE)
+network.graph(
+  path.analysis.res = path.analysis.res,
+  pathway.FDR.cutoff = 0.1,
+  pathway.label = FALSE,
+  drug.label.size = 1.2,
+  path.label.size = 0.8,
+  return.adj.table = TRUE
+)
 }
 \arguments{
 \item{path.analysis.res}{The pathway analysis results. Output of function pathway.analysis().}

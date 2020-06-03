@@ -4,8 +4,13 @@
 \alias{pathway.analysis}
 \title{Drug Mechanism of Action Pathway Analysis}
 \usage{
-pathway.analysis(drug.ident.res = drug.ident.res, pathway.list = NULL,
-  pathway.list.path = NULL, drug.FDR.cutoff = 0.1, CEG.threshold = 0.05)
+pathway.analysis(
+  drug.ident.res = drug.ident.res,
+  pathway.list = NULL,
+  pathway.list.path = NULL,
+  drug.FDR.cutoff = 0.1,
+  CEG.threshold = 0.05
+)
 }
 \arguments{
 \item{drug.ident.res}{Dr. Insight drug identification analysis results. Output of function drug.ident().}

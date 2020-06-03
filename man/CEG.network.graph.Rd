@@ -4,9 +4,13 @@
 \alias{CEG.network.graph}
 \title{Plot The Pathway-CEG Network for A Drug}
 \usage{
-CEG.network.graph(path.analysis.res = path.analysis.res,
-  pathway.FDR.cutoff = 0.1, drug.name = NULL, pathway.name = NULL,
-  show.plot = TRUE)
+CEG.network.graph(
+  path.analysis.res = path.analysis.res,
+  pathway.FDR.cutoff = 0.1,
+  drug.name = NULL,
+  pathway.name = NULL,
+  show.plot = TRUE
+)
 }
 \arguments{
 \item{path.analysis.res}{The pathway analysis results. Output of function pathway.analysis().}
